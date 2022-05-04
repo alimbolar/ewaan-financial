@@ -4,17 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/css/main.css" />
     <title>Document</title>
   </head>
   <body>
     <header>
-      <div class="logo"></div>
+      <div class="logo">
+        <img src="./src//images/logo.png" alt="" />
+      </div>
       <nav>
         <ul>
-          <li>Home</li>
+          <li><a href="/">Home</a></li>
           <li><a href="#about-us">About Us</a></li>
           <li><a href="#features">Why Us</a></li>
-          <li>Benefits Of Outsourcing</li>
+          <li><a href="#benefits">Benefits Of Outsourcing</a></li>
           <li><a href="#contact-us">Contact Us</a></li>
         </ul>
       </nav>
@@ -69,36 +78,50 @@
         </article>
         <article class="hightlights__stack">
           <div class="highlight">
-            <h4>Bookkeeping Services</h4>
-            Ewaan Financia has an impressive record of providing bookkeeping
-            services to small businesses across many industrial sectors.
+            <h5>Bookkeeping Services</h5>
+            <p>
+              Ewaan Financia has an impressive record of providing bookkeeping
+              services to small businesses across many industrial sectors.
+            </p>
           </div>
 
           <div class="highlight">
-            <h4>Accounts Payable</h4>
-            From invoice receipt, uploading and processing to difference
-            management as well as reconciliation, we manage it all on your
-            behalf.
+            <h5>Accounts Payable</h5>
+            <p>
+              From invoice receipt, uploading and processing to difference
+              management as well as reconciliation, we manage it all on your
+              behalf.
+            </p>
           </div>
           <div class="highlight">
-            <h4>Accounts Receivable</h4>
-            Our customized accounts receivable services can help boost your
-            business cash flow and cut down operational expenses.
+            <h5>Accounts Receivable</h5>
+            <p>
+              Our customized accounts receivable services can help boost your
+              business cash flow and cut down operational expenses.
+            </p>
           </div>
           <div class="highlight">
-            <h4>Financial Reporting</h4>
-            Our financial reporting services are designed to suit your business'
-            requirements & are intended to scale up your business performance.
+            <h5>Financial Reporting</h5>
+            <p>
+              Our financial reporting services are designed to suit your
+              business' requirements & are intended to scale up your business
+              performance.
+            </p>
           </div>
           <div class="highlight">
-            <h4>Payroll Processing</h4>
-            We at Ewaan Financial offer effortless, friendly and cost-efficient
-            payroll processing services for small businesses.
+            <h5>Payroll Processing</h5>
+            <p>
+              We at Ewaan Financial offer effortless, friendly and
+              cost-efficient payroll processing services for small businesses.
+            </p>
           </div>
           <div class="highlight">
-            <h4>Tax Preparation</h4>
-            With Ewaan Financial’s tax preparation services, your small business
-            does not have to deal with the tax compliance workload any further.
+            <h5>Tax Preparation</h5>
+            <p>
+              With Ewaan Financial’s tax preparation services, your small
+              business does not have to deal with the tax compliance workload
+              any further.
+            </p>
           </div>
         </article>
       </section>
@@ -107,7 +130,7 @@
         <h2>Our Key Differentiators</h2>
 
         <article class="features__single">
-          <h4>Staffing</h4>
+          <h5>Staffing</h5>
 
           <p>
             Flexibility Outsourcing accounting services allows your small
@@ -117,7 +140,7 @@
         </article>
 
         <article class="features__single">
-          <h4>Technical Know-How</h4>
+          <h5>Technical Know-How</h5>
           <p>
             Our accounting experts can efficiently work on the software you are
             currently using or can help you choose the best one as per your
@@ -126,7 +149,7 @@
         </article>
 
         <article class="features__single">
-          <h4>We Help You Focus</h4>
+          <h5>We Help You Focus</h5>
           <p>
             When you outsource your small business accounting functions to us,
             you get more time to pay attention to your core business operations
@@ -134,14 +157,14 @@
           </p>
         </article>
         <article class="features__single">
-          <h4>We Value Your Objectives</h4>
+          <h5>We Value Your Objectives</h5>
           <p>
             We genuinely value the objectives of our every small business client
             and always seek revolutionary methods to help them achieve the same.
           </p>
         </article>
         <article class="features__single">
-          <h4>Fruitful Planning</h4>
+          <h5>Fruitful Planning</h5>
 
           <p>
             We spend time comprehending how your business works daily, according
@@ -150,7 +173,7 @@
           </p>
         </article>
         <article class="features__single">
-          <h4>High Credibility</h4>
+          <h5>High Credibility</h5>
           <p>
             We are an expert accounting outsourcing company that aims to fulfill
             client requirements proficiently, cost-effectively and by
@@ -159,7 +182,7 @@
         </article>
 
         <article class="features__single">
-          <h4>Staffing Flexibility</h4>
+          <h5>Staffing Flexibility</h5>
           <p>
             Outsourcing accounting services allows your small business to retain
             financial flexibility even during tough periods. You may scale up or
@@ -167,7 +190,7 @@
           </p>
         </article>
         <article class="features__single">
-          <h4>Technical Know-How</h4>
+          <h5>Technical Know-How</h5>
           <p>
             Our accounting experts can efficiently work on the software you are
             currently using or can help you choose the best one as per your
@@ -176,31 +199,31 @@
         </article>
       </section>
 
-      <section>
+      <section id="benefits" class="benefits">
         <article>
           <h3>
             Advantages of Outsourcing Your Small Business Accounting Tasks:
           </h3>
 
-          <ul>
-            <li>
+          <ul class="benefits__list">
+            <li class="benefits__item">
               You can minimize the accounting staff, consequently lowering
               payroll and costs of benefits needed for those staff members.
             </li>
-            <li>
+            <li class="benefits__item">
               You can expect to do away with the investment in hardware like
               computer systems, file savers and accounting software programs.
             </li>
-            <li>
+            <li class="benefits__item">
               You can make it possible for your team to concentrate on primary
               business activities- expanding and managing the business
               effectively.
             </li>
-            <li>
+            <li class="benefits__item">
               You are going to have peace of mind- getting your accounting
               services carried out by a highly-skilled team.
             </li>
-            <li>
+            <li class="benefits__item">
               You can improve your internal controls by creating a breakup of
               responsibilities.
             </li>
@@ -217,7 +240,8 @@
         highly skilled professionals offer fast learning curves and swift
         implementation of solutions.
       </p>
-      Every Business is Unique. Find Out How We Can Help Yours. Contact Us
+      <h6>Every Business is Unique. Find Out How We Can Help Yours.</h6>
+      <form>Send us a message</form>
     </main>
 
     <footer></footer>
