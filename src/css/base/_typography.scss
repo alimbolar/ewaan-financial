@@ -13,7 +13,8 @@ h5,
 h6 {
   font-weight: 300;
   max-width: 60ch;
-  line-height: 1.8em;
+  line-height: 1.2em;
+  padding-bottom: 0.5rem;
 }
 
 h1 {
@@ -47,6 +48,7 @@ li {
   font-size: calc(0.8 * var(--font-size));
   max-width: 60ch;
   margin: auto;
+  padding-bottom: 0.5rem;
 }
 
 form {
