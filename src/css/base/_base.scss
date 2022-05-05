@@ -12,10 +12,6 @@ body {
   background: white;
 }
 
-img {
-  width: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -26,5 +22,18 @@ h6 {
 }
 
 section {
-  margin-block: 3rem;
+  margin-block-end: 3rem;
 }
+
+img {
+  width: 100%;
+}
+
+// figure {
+//   width: max-content;
+//   height: 200px;
+// }
+
+// picture {
+//   height: auto;
+// }
