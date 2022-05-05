@@ -11,6 +11,9 @@ module.exports = {
     clean: true,
     assetModuleFilename: "./assets/images/[name][ext][query]",
   },
+  devServer: {
+    static: { directory: path.resolve(__dirname, "build") },
+  },
   plugins: [
     new HtmlWebpackPlugin({ template: "./src/template.html" }),
     new MiniCssExtractPlugin({ filename: "[name].[hash:4].css" }),
