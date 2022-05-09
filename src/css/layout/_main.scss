@@ -20,6 +20,10 @@ main {
 }
 
 .icon {
+  display: block;
+  margin: auto;
+  width: 80px;
+  height: 80px;
   color: var(--primary-color);
   font-size: calc(3 * var(--font-size));
 }
