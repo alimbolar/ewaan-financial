@@ -4,6 +4,7 @@
   aspect-ratio: 3/2;
   border: 1px solid var(--primary-color);
   margin: auto;
+  overflow: hidden;
   @supports not (aspect-ratio: auto) {
     height: 300px;
     @media (min-width: 800px) {
@@ -48,6 +49,7 @@
 
 .slides {
   display: flex;
+  // overflow: hidden;
   > * {
     width: 100%;
     flex: 0 0 auto;
