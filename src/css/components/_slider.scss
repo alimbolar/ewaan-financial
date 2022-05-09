@@ -11,11 +11,11 @@
     }
   }
 
-  figure {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+  // figure {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  // }
 
   .arrow {
     position: absolute;
@@ -43,5 +43,13 @@
       font-size: calc(1 * var(--font-size));
       color: white;
     }
+  }
+}
+
+.slides {
+  display: flex;
+  > * {
+    width: 100%;
+    flex: 0 0 auto;
   }
 }
