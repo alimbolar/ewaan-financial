@@ -55,3 +55,31 @@ slidesContainer.addEventListener("transitionend", () => {
     slidesContainer.style.transform = `translatex(-${slideWidth * index}px)`;
   }
 });
+
+// ANIMATION
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("show", entry.isIntersecting);
+      if (entry.isIntersecting) observer.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 1,
+    rootMargin: "10% 0%",
+  }
+);
+
+const services = document.querySelectorAll(".service");
+const features = document.querySelectorAll(".feature");
+const benefits = document.querySelector(".benefits");
+services.forEach((service) => {
+  observer.observe(service);
+});
+
+features.forEach((feature) => {
+  observer.observe(feature);
+});
+
+observer.observe(benefits);
