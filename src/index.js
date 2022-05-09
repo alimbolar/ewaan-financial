@@ -10,3 +10,5 @@ const toggleNav = function () {
 
 navWrapper.addEventListener("click", toggleNav);
 menu.addEventListener("click", toggleNav);
+
+// SLIDER

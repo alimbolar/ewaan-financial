@@ -10,8 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&display=swap"
       rel="stylesheet"
     />
-    <!-- <link rel="stylesheet" href="/src/css/main.css" />
-    <script src="./dist/main.js"></script> -->
+
+    <script
+      src="https://kit.fontawesome.com/11cec108a9.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>Ewaan Financial</title>
   </head>
   <body>
@@ -68,31 +72,58 @@
           fasten growth.
         </p>
       </section>
+      <hr />
 
       <section id="about-us" class="about-us">
-        <h2>About Ewaan Financial</h2>
-
-        <p>
-          As a relatively new entrant, Ewaan Financial has the advantage of
-          always having used the latest accounting systems and practices that
-          are a much needed tool in today’s accounting environment. Our 8 years
-          of experience in servicing organisations with accounting and taxation
-          services has taught us the importance of building close relationships
-          with our clients to ensure the most efficient service. It’s this
-          relationship that helps us understand our client’s unique
-          circumstances and tailor our services to meet their needs. And most
-          importantly, at an affordable cost.
-        </p>
-      </section>
-      <section class="highlights">
-        <article class="highlights__content">
-          <h3>Small Business Accounting Services</h3>
+        <figure class="about-us__image">
+          <picture>
+            <img src="./images/people-at-work.jpg" alt="" />
+          </picture>
+        </figure>
+        <div class="about-us__content">
+          <h2>About Ewaan Financial</h2>
           <p>
-            As a small business entrepreneur,you must be pre-occupied, having
-            very less time to maintain a record of your finances, invoice your
-            clients and put together annual financial reports. You may also have
-            to prepare taxes on time, or perhaps handle your employees' payroll.
-            This is where our small business accounting services come in handy.
+            Having always used the latest accounting systems and practices that
+            are a much needed tool in today’s accounting environment and 10
+            years of experience in servicing organisations with accounting and
+            taxation services has taught us the importance of building close
+            relationships with our clients to ensure the most efficient service.
+            It’s this relationship that helps us understand our client’s unique
+            circumstances and tailor our services to meet their needs. And most
+            importantly, at an affordable cost.
+          </p>
+        </div>
+      </section>
+      <hr />
+
+      <section class="services">
+        <article class="slider">
+          <figure>
+            <picture
+              ><img src="./images/accounting.jpg" loading="lazy" alt=""
+            /></picture>
+          </figure>
+          <figure>
+            <picture
+              ><img src="./images/bookkeeping.jpg" loading="lazy" alt=""
+            /></picture>
+          </figure>
+          <figure>
+            <picture
+              ><img src="./images/gst.jpg" loading="lazy" alt=""
+            /></picture>
+          </figure>
+          <div class="arrow left">
+            <span class="icon"> <i class="fa-solid fa-arrow-left"></i></span>
+          </div>
+          <div class="arrow right">
+            <span class="icon"> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <article class="services__content">
+          <h3>Our Services</h3>
+          <p>
             Ewaan Finacial offers small businesses with personalized accounting,
             bookkeeping, tax preparation and financial reporting services
             intended to fulfill their specific requirements. We incorporate
@@ -101,47 +132,65 @@
             top-notch accounting solutions.
           </p>
         </article>
-        <article class="hightlights__stack">
-          <div class="highlight">
+        <article class="services flex">
+          <div class="service">
             <h5>Bookkeeping Services</h5>
+            <span class="icon">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </span>
             <p>
               Ewaan Financia has an impressive record of providing bookkeeping
               services to small businesses across many industrial sectors.
             </p>
           </div>
 
-          <div class="highlight">
+          <div class="service">
             <h5>Accounts Payable</h5>
+            <span class="icon">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </span>
             <p>
               From invoice receipt, uploading and processing to difference
               management as well as reconciliation, we manage it all on your
               behalf.
             </p>
           </div>
-          <div class="highlight">
+          <div class="service">
             <h5>Accounts Receivable</h5>
+            <span class="icon">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </span>
             <p>
               Our customized accounts receivable services can help boost your
               business cash flow and cut down operational expenses.
             </p>
           </div>
-          <div class="highlight">
+          <div class="service">
             <h5>Financial Reporting</h5>
+            <span class="icon">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </span>
             <p>
               Our financial reporting services are designed to suit your
               business' requirements & are intended to scale up your business
               performance.
             </p>
           </div>
-          <div class="highlight">
+          <div class="service">
             <h5>Payroll Processing</h5>
+            <span class="icon">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </span>
             <p>
               We at Ewaan Financial offer effortless, friendly and
               cost-efficient payroll processing services for small businesses.
             </p>
           </div>
-          <div class="highlight">
+          <div class="service">
             <h5>Tax Preparation</h5>
+            <span class="icon">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </span>
             <p>
               With Ewaan Financial’s tax preparation services, your small
               business does not have to deal with the tax compliance workload
@@ -151,29 +200,12 @@
         </article>
       </section>
 
+      <hr />
+
       <section id="features" class="features grid">
         <h2>Our Key Differentiators</h2>
 
-        <article class="features__single">
-          <h5>Staffing</h5>
-
-          <p>
-            Flexibility Outsourcing accounting services allows your small
-            business to retain financial flexibility during skepticism in
-            demand. You may scale up or down easily.
-          </p>
-        </article>
-
-        <article class="features__single">
-          <h5>Technical Know-How</h5>
-          <p>
-            Our accounting experts can efficiently work on the software you are
-            currently using or can help you choose the best one as per your
-            business requirements.
-          </p>
-        </article>
-
-        <article class="features__single">
+        <article class="feature">
           <h5>We Help You Focus</h5>
           <p>
             When you outsource your small business accounting functions to us,
@@ -181,14 +213,14 @@
             and decisions.
           </p>
         </article>
-        <article class="features__single">
+        <article class="feature">
           <h5>We Value Your Objectives</h5>
           <p>
             We genuinely value the objectives of our every small business client
             and always seek revolutionary methods to help them achieve the same.
           </p>
         </article>
-        <article class="features__single">
+        <article class="feature">
           <h5>Fruitful Planning</h5>
 
           <p>
@@ -197,7 +229,7 @@
             requirements.
           </p>
         </article>
-        <article class="features__single">
+        <article class="feature">
           <h5>High Credibility</h5>
           <p>
             We are an expert accounting outsourcing company that aims to fulfill
@@ -206,7 +238,7 @@
           </p>
         </article>
 
-        <article class="features__single">
+        <article class="feature">
           <h5>Staffing Flexibility</h5>
           <p>
             Outsourcing accounting services allows your small business to retain
@@ -214,7 +246,7 @@
             down easily.
           </p>
         </article>
-        <article class="features__single">
+        <article class="feature">
           <h5>Technical Know-How</h5>
           <p>
             Our accounting experts can efficiently work on the software you are
@@ -223,6 +255,7 @@
           </p>
         </article>
       </section>
+      <hr />
 
       <section id="benefits" class="benefits">
         <article>
@@ -231,30 +264,32 @@
           </h3>
 
           <ul class="benefits__list">
-            <li class="benefits__item">
+            <li class="benefit">
               You can minimize the accounting staff, consequently lowering
               payroll and costs of benefits needed for those staff members.
             </li>
-            <li class="benefits__item">
+            <li class="benefit">
               You can expect to do away with the investment in hardware like
               computer systems, file savers and accounting software programs.
             </li>
-            <li class="benefits__item">
+            <li class="benefit">
               You can make it possible for your team to concentrate on primary
               business activities- expanding and managing the business
               effectively.
             </li>
-            <li class="benefits__item">
+            <li class="benefit">
               You are going to have peace of mind- getting your accounting
               services carried out by a highly-skilled team.
             </li>
-            <li class="benefits__item">
+            <li class="benefit">
               You can improve your internal controls by creating a breakup of
               responsibilities.
             </li>
           </ul>
         </article>
       </section>
+
+      <hr />
 
       <section id="contact-us" class="contact-us"></section>
       <h2>Contact Us</h2>
@@ -265,8 +300,8 @@
         highly skilled professionals offer fast learning curves and swift
         implementation of solutions.
       </p>
-      <h6>Every Business is Unique. Find Out How We Can Help Yours.</h6>
       <form>Send us a message</form>
+      <h6>Every Business is Unique. Find Out How We Can Help Yours.</h6>
 
       <footer></footer>
     </main>

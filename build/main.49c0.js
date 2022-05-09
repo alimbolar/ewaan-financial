@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=document.querySelector(".menu"),t=document.querySelector(".nav__wrapper"),c=function(){t.classList.toggle("hidden"),e.firstChild.classList.toggle("toggled")};t.addEventListener("click",c),e.addEventListener("click",c)})();

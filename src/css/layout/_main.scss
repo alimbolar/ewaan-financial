@@ -10,6 +10,29 @@ main {
   padding: 1rem;
 }
 
-.hero {
+.hero,
+.features,
+.benefits,
+.highlights,
+.services,
+.about-us {
   text-align: center;
+}
+
+.icon {
+  color: var(--primary-color);
+  font-size: calc(3 * var(--font-size));
+}
+
+hr {
+  border: 1px dotted var(--primary-color);
+  width: 20rem;
+  margin-block: 5rem;
+}
+
+.service,
+.benefit,
+.highlight,
+.feature {
+  margin-block: 3rem;
 }
