@@ -154,7 +154,7 @@ const submitMessage = (event) => {
       console.log(response);
       console.log(response.json());
       console.log(response.ok);
-      return response.text();
+      return response.json();
     })
     .then((data) => console.log(data));
 };
