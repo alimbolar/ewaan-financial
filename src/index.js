@@ -131,10 +131,11 @@ const form = document.querySelector("#message");
 const submitMessage = (event) => {
   event.preventDefault();
 
-  const formData = new FormData();
+  const formData = new FormData(form);
 
   formData.append("recipient", "alimbolar@gmail.com");
   formData.append("subject", "Submission from website");
+
   const messageData = Object.fromEntries(formData);
 
   console.log(messageData);
