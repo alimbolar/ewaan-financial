@@ -20,11 +20,11 @@ exports.handler = function (event, context, callback) {
     }
   });
 
-  const { email, name, mobile, message, subject, recipient } = JSON.parse(
-    event.body
-  );
+  const messageData = JSON.parse(event);
 
-  console.log(event);
+  const { email, name, mobile, message, subject, recipient } = messageData.body;
+
+  console.log(messageData);
 
   const mailOptions = {
     from: "test@gmail.com",
