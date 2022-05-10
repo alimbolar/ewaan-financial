@@ -20,7 +20,9 @@ exports.handler = function (event, context, callback) {
     }
   });
 
-  const { email, name, mobile, message, subject, recipient } = event.body;
+  const { email, name, mobile, message, subject, recipient } = JSON.parse(
+    event.body
+  );
 
   console.log(event);
 
