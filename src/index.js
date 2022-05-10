@@ -151,8 +151,10 @@ const submitMessage = (event) => {
 
   fetch(url, options)
     .then((response) => response.json())
-    .then((data) => if(data.status==="success"){
-      form.style.opacity=0.2;
+    .then((data) => {
+      if (data.status === "success") {
+        form.style.opacity = 0.2;
+      }
     });
 };
 
