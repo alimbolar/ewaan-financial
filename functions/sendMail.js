@@ -22,7 +22,7 @@ exports.handler = function (event, context, callback) {
 
   const messageData = JSON.parse(event.body);
 
-  const { email, name, mobile, message, subject, recipient } = messageData.body;
+  const { email, name, mobile, message, subject, recipient } = messageData;
 
   console.log(messageData);
 
