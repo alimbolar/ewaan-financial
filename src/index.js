@@ -152,9 +152,8 @@ const submitMessage = (event) => {
   fetch(url, options)
     .then((response) => {
       response.json();
-      console.log(response);
     })
-    .then((data) => console.log(data, data.body));
+    .then((a,b) => console.log(a,b);
 };
 
 form.addEventListener("submit", submitMessage);
