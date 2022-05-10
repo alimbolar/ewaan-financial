@@ -22,16 +22,16 @@ main {
 .icon {
   display: block;
   margin: auto;
-  width: 80px;
-  height: 80px;
+  width: 4rem;
+  height: 4rem;
   color: var(--primary-color);
-  font-size: calc(3 * var(--font-size));
+  // font-size: calc(3 * var(--font-size));
 }
 
 hr {
   border: 1px dotted var(--primary-color);
   width: 20rem;
-  margin-block: 5rem;
+  margin-block: 3rem;
 }
 
 .service,

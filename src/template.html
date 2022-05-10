@@ -28,6 +28,7 @@
           <ul class="nav__list">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about-us">About Us</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#features">Why Us</a></li>
             <li><a href="#benefits">Benefits Of Outsourcing</a></li>
             <li><a href="#contact-us">Contact Us</a></li>
@@ -72,9 +73,9 @@
           fasten growth.
         </p>
       </section>
-      <hr />
+      <hr id="about-us" />
 
-      <section id="about-us" class="about-us">
+      <section class="about-us">
         <figure class="about-us__image">
           <picture>
             <img src="./images/people-at-work.jpg" alt="" />
@@ -94,7 +95,8 @@
           </p>
         </div>
       </section>
-      <hr />
+
+      <hr id="services" />
 
       <section class="services">
         <article class="slider">
@@ -144,7 +146,7 @@
             top-notch accounting solutions.
           </p>
         </article>
-        <article class="services flex">
+        <article class="services__list flex">
           <div class="service">
             <h5>Bookkeeping Services</h5>
             <span class="icon">
@@ -212,9 +214,9 @@
         </article>
       </section>
 
-      <hr />
+      <hr id="features" />
 
-      <section id="features" class="features grid">
+      <section class="features grid">
         <h2>Our Key Differentiators</h2>
 
         <article class="feature">
@@ -267,13 +269,11 @@
           </p>
         </article>
       </section>
-      <hr />
+      <hr id="benefits" />
 
-      <section id="benefits" class="benefits">
+      <section class="benefits">
         <article>
-          <h3>
-            Advantages of Outsourcing Your Small Business Accounting Tasks:
-          </h3>
+          <h3>Advantages of Outsourcing Accounting Tasks</h3>
 
           <ul class="benefits__list">
             <li class="benefit">
@@ -301,9 +301,9 @@
         </article>
       </section>
 
-      <hr />
+      <hr id="contact-us" />
 
-      <section id="contact-us" class="contact-us"></section>
+      <section class="contact-us"></section>
       <h2>Contact Us</h2>
 
       <p>We Support Multiple Accounting Software</p>
@@ -312,7 +312,14 @@
         highly skilled professionals offer fast learning curves and swift
         implementation of solutions.
       </p>
-      <form>Send us a message</form>
+      <h6>Send us a message</h6>
+      <form>
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <input type="tel" placeholder="Your Whatsapp Number" />
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button type="submit">Submit</button>
+      </form>
       <h6>Every Business is Unique. Find Out How We Can Help Yours.</h6>
 
       <footer></footer>
