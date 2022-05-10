@@ -27,10 +27,10 @@ exports.handler = function (event, context, callback) {
   console.log(messageData);
 
   const mailOptions = {
-    from: "test@gmail.com",
-    to: "alimbolar@gmail.com",
-    subject: "test",
-    text: "test",
+    from: email,
+    to: recipient,
+    subject: subject,
+    text: message,
   };
 
   transporter.sendMail(mailOptions, (error, success) => {
