@@ -140,7 +140,7 @@ const submitMessage = (event) => {
 
   console.log(messageData);
 
-  const url = "/api/sendMail";
+  const url = ".netlify/functions/sendMail";
   const options = {
     method: "POST",
     headers: {
