@@ -304,20 +304,22 @@
       <hr id="contact-us" />
 
       <section class="contact-us"></section>
-      <h2>Contact Us</h2>
+      <article class="contact-us__content">
+        <h2>Contact Us</h2>
 
-      <p>We Support Multiple Accounting Software</p>
-      <p>
-        With expertise in multiple accounting software and platform, our team of
-        highly skilled professionals offer fast learning curves and swift
-        implementation of solutions.
-      </p>
-      <h6>Send us a message</h6>
-      <form>
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Your Email" />
-        <input type="tel" placeholder="Your Whatsapp Number" />
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <p>We Support Multiple Accounting Software</p>
+        <p>
+          With expertise in multiple accounting software and platform, our team
+          of highly skilled professionals offer fast learning curves and swift
+          implementation of solutions.
+        </p>
+      </article>
+      <h6 class="messageHeadline">Send us a message</h6>
+      <form id="message" enctype="multipart/form-data">
+        <input type="text" placeholder="Your Name" name="name" />
+        <input type="email" placeholder="Your Email" name="email" />
+        <input type="tel" placeholder="Your Whatsapp Number" name="mobile" />
+        <textarea name="message" id="" cols="30" rows="10"></textarea>
         <button type="submit">Submit</button>
       </form>
       <h6>Every Business is Unique. Find Out How We Can Help Yours.</h6>

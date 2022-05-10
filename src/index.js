@@ -123,3 +123,29 @@ features.forEach((feature) => {
 });
 
 observer.observe(benefits);
+
+// SEND EMAIL
+
+const form = document.querySelector("#message");
+
+const formData = new FormData();
+
+formData.append("recipient", "alimbolar@gmail.com");
+formData.append("subject", "Submission from website");
+const messageData = Object.fromEntries(formData);
+
+const url = "/api/sendMail.js";
+const options = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(messageData),
+};
+
+fetch(url, options)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    alert("message sent successfully");
+  });
