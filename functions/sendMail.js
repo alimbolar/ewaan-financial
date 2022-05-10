@@ -41,7 +41,10 @@ exports.handler = function (event, context, callback) {
       console.log("email sent");
       callback(null, {
         statusCode: 200,
-        body: "Email sent successfully",
+        body: JSON.stringify({
+          status: "success",
+          message: "Email sent successfully",
+        }),
       });
     }
   });
