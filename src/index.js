@@ -128,24 +128,32 @@ observer.observe(benefits);
 
 const form = document.querySelector("#message");
 
-const formData = new FormData();
+const submitMessage = (event) => {
+  event.preventDefault();
 
-formData.append("recipient", "alimbolar@gmail.com");
-formData.append("subject", "Submission from website");
-const messageData = Object.fromEntries(formData);
+  const formData = new FormData();
 
-const url = "/api/sendMail.js";
-const options = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(messageData),
+  formData.append("recipient", "alimbolar@gmail.com");
+  formData.append("subject", "Submission from website");
+  const messageData = Object.fromEntries(formData);
+
+  console.log(messageData);
+
+  const url = "/api/sendMail.js";
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(messageData),
+  };
+
+  fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      alert("message sent successfully");
+    });
 };
 
-fetch(url, options)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    alert("message sent successfully");
-  });
+form.addEventListener("submit", submitMessage);
