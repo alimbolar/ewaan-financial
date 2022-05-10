@@ -64,3 +64,12 @@ hr {
     transform: scale(1);
   }
 }
+
+.service {
+  .icon {
+    img {
+      filter: invert(6%) sepia(96%) saturate(6127%) hue-rotate(359deg)
+        brightness(121%) contrast(99%);
+    }
+  }
+}

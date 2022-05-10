@@ -17,11 +17,12 @@ const slider = document.querySelector(".slider");
 const slidesContainer = document.querySelector(".slides");
 
 let slides = slidesContainer.querySelectorAll(".slide");
-let index = 1;
-let slideWidth = slides[index].clientWidth;
+let currSlide = 1;
+let slideWidth = slides[currSlide].clientWidth;
 const interval = 2000;
+let slideId;
 
-console.log("slideWidth", slides[index].clientWidth);
+console.log("slideWidth", slideWidth);
 
 const firstSlide = slides[0].cloneNode(true);
 const lastSlide = slides[slides.length - 1].cloneNode(true);
@@ -32,29 +33,68 @@ lastSlide.id = "last-slide";
 slidesContainer.prepend(lastSlide);
 slidesContainer.append(firstSlide);
 
-slidesContainer.style.transform = `translatex(${-slideWidth * index}px)`;
+// Set initial position to 1 as currSlide is on index 1
+slidesContainer.style.transform = `translatex(${-slideWidth * currSlide}px)`;
 
+const moveToNext = () => {
+  slides = getSlides();
+  if (currSlide >= slides.length - 1) return;
+  currSlide++;
+  slidesContainer.style.transform = `translatex(-${slideWidth * currSlide}px)`;
+  slidesContainer.style.transition = `0.7s`;
+};
+
+const moveToPrevious = () => {
+  // slides = getSlides();
+  if (currSlide <= 0) return;
+  currSlide--;
+  slidesContainer.style.transform = `translatex(-${slideWidth * currSlide}px)`;
+  slidesContainer.style.transition = `0.7s`;
+};
 const startSlide = () => {
-  setInterval(() => {
-    index++;
-    slidesContainer.style.transform = `translatex(-${slideWidth * index}px)`;
-    slidesContainer.style.transition = `0.7s`;
+  slideId = setInterval(() => {
+    moveToNext();
   }, interval);
 };
 
 startSlide();
 
 slidesContainer.addEventListener("transitionend", () => {
-  slides = slidesContainer.querySelectorAll(".slide");
+  slides = getSlides();
 
-  console.log(slides[index].id);
-
-  if (slides[index].id === firstSlide.id) {
+  if (slides[currSlide].id === firstSlide.id) {
     slidesContainer.style.transition = "none";
-    index = 1;
-    slidesContainer.style.transform = `translatex(-${slideWidth * index}px)`;
+    currSlide = 1;
+    slidesContainer.style.transform = `translatex(-${
+      slideWidth * currSlide
+    }px)`;
+  }
+  if (slides[currSlide].id === lastSlide.id) {
+    slidesContainer.style.transition = "none";
+    currSlide = slides.length - 2;
+    slidesContainer.style.transform = `translatex(-${
+      slideWidth * currSlide
+    }px)`;
   }
 });
+
+slidesContainer.addEventListener("mouseenter", () => {
+  console.log("mouse enter");
+  clearInterval(slideId);
+});
+
+slidesContainer.addEventListener("mouseleave", () => {
+  console.log("mouse leave");
+  startSlide();
+});
+
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+
+next.addEventListener("click", moveToNext);
+prev.addEventListener("click", moveToPrevious);
+
+const getSlides = () => slidesContainer.querySelectorAll(".slide");
 
 // ANIMATION
 
