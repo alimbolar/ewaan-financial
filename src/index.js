@@ -140,7 +140,7 @@ const submitMessage = (event) => {
 
   console.log(messageData);
 
-  const url = "/api/sendMail.js";
+  const url = "/api/sendMail";
   const options = {
     method: "POST",
     headers: {
