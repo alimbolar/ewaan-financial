@@ -150,7 +150,12 @@ const submitMessage = (event) => {
   };
 
   fetch(url, options)
-    .then((response) => response.text())
+    .then((response) => {
+      console.log(response);
+      console.log(response.json());
+      console.log(response.ok);
+      return response.text();
+    })
     .then((data) => console.log(data));
 };
 
