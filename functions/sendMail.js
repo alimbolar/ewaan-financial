@@ -22,6 +22,8 @@ exports.handler = function (event, context, callback) {
 
   const { email, name, mobile, message, subject, recipient } = event.body;
 
+  console.log(event);
+
   const mailOptions = {
     from: "test@gmail.com",
     to: "alimbolar@gmail.com",
@@ -36,8 +38,8 @@ exports.handler = function (event, context, callback) {
     } else {
       console.log("email sent");
       callback(null, {
-        status: "success",
-        message: "Email sent successfully",
+        statusCode: 200,
+        body: "Email sent successfully",
       });
     }
   });
