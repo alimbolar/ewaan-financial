@@ -14,20 +14,30 @@ const mailConfig = {
 // CREATE TRANSPORTER
 const transporter = nodemailer.createTransport(mailConfig);
 
+// VERIFY IF TRANSPORTER WORKS FINE
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Ready to send emails");
+  }
+});
+
 exports.handler = async function (event, context, callback) {
   try {
-    // VERIFY IF TRANSPORTER WORKS FINE
-    transporter.verify((error, success) => {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Ready to send emails");
-      }
-    });
     const messageData = JSON.parse(event.body);
 
     console.log(event);
+    console.log(messageData);
 
+    const country = event.headers["x-country"];
+    const ip = event.headers["x-forwarded-for"].split(",").pop();
+
+    console.log(event);
+    console.log(messageData);
+
+    console.log(country);
+    console.log(ip);
     const { email, name, mobile, message, subject, recipient } = messageData;
 
     const mailOptions = {
@@ -43,7 +53,7 @@ exports.handler = async function (event, context, callback) {
   </ul>
   <br/>
   <br/>
-  <p><em>Message received from </em></p>
+  <p><em>Message received from ${country}:${ip}</em></p>
   `,
     };
 

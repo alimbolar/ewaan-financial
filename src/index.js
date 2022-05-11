@@ -127,7 +127,7 @@ observer.observe(benefits);
 // SEND EMAIL
 
 const form = document.querySelector("#message");
-const messageHeadline = document.querySelector(".message");
+const messageHeadline = document.querySelector(".messageHeadline");
 const contactUsContent = document.querySelector(".contact-us__content");
 
 const submitMessage = (event) => {
