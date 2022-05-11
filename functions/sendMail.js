@@ -27,17 +27,12 @@ exports.handler = async function (event, context, callback) {
 
     const messageData = JSON.parse(event.body);
 
-    console.log(event);
-    console.log(messageData);
+    // console.log(event);
+    // console.log(messageData);
 
     const country = event.headers["x-country"];
     const ip = event.headers["x-forwarded-for"].split(",").pop();
 
-    console.log(event);
-    console.log(messageData);
-
-    console.log(country);
-    console.log(ip);
     const { email, name, mobile, message, subject, recipient } = messageData;
 
     const mailOptions = {
@@ -75,7 +70,7 @@ exports.handler = async function (event, context, callback) {
   } catch (error) {
     console.log(error);
     callback(null, {
-      statusCode: 400,
+      statusCode: 200,
       body: JSON.stringify({
         status: "fail",
         data: `Sorry. The message could not be sent due to this error : ${error.message}. \r\n  Please try again later. Or contact us on +91-9920019569`,
