@@ -35,13 +35,8 @@ exports.handler = function (event, context, callback) {
 
     const { email, name, mobile, message, subject, recipient } = messageData;
 
-    const mailOptions = {
-      from: email,
-      to: recipient,
-      subject: subject,
-      text: message,
-      html: "<div>Hello World</>",
-      //     html: `<div>You have a new message from ${name}</div>
+    const htmlMessage = () => {
+      return `<div>You have a new message from ${name}</div>
       // <ul><li>Name : ${name}</li>
       // <li>Email : ${email}</li>
       // <li>Mobile : ${mobile}</li>
@@ -50,7 +45,14 @@ exports.handler = function (event, context, callback) {
       // <br/>
       // <br/>
       // <p><em>Message received from ${country}:${ip}</em></p>
-      // `,
+      // `;
+    };
+    const mailOptions = {
+      from: email,
+      to: recipient,
+      subject: subject,
+      text: message,
+      html: htmlMessage(),
     };
 
     transporter.sendMail(mailOptions, (error, success) => {
