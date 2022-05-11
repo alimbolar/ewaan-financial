@@ -135,7 +135,7 @@ const submitMessage = (event) => {
 
   const formData = new FormData(form);
 
-  formData.append("recipient", "alimbolar@gmail.com");
+  formData.append("recipient", "shahebazvora@gmail.com");
   formData.append("subject", "Submission from website");
 
   const messageData = Object.fromEntries(formData);
