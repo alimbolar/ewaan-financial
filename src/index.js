@@ -156,7 +156,7 @@ const submitMessage = (event) => {
     .then((data) => {
       form.style.opacity = 0;
       contactUsContent.style.opacity = 0;
-      messageHeadline.textContent = data.message;
+      messageHeadline.textContent = data.data;
       messageHeadline.setAttribute("style", "white-space:pre;");
       // if (data.status === "success") {
       // }
