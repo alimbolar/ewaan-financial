@@ -127,6 +127,8 @@ observer.observe(benefits);
 // SEND EMAIL
 
 const form = document.querySelector("#message");
+const messageHeadline = document.querySelector(".message");
+const contactUsContent = document.querySelector(".contact-us__content");
 
 const submitMessage = (event) => {
   event.preventDefault();
@@ -152,9 +154,12 @@ const submitMessage = (event) => {
   fetch(url, options)
     .then((response) => response.json())
     .then((data) => {
-      if (data.status === "success") {
-        form.style.opacity = 0.2;
-      }
+      form.style.opacity = 0;
+      contactUsContent.style.opacity = 0;
+      messageHeadline.textContent = data.message;
+      messageHeadline.setAttribute("style", "white-space:pre;");
+      // if (data.status === "success") {
+      // }
     });
 };
 
