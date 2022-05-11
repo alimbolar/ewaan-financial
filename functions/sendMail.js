@@ -1,30 +1,30 @@
 const nodemailer = require("nodemailer");
 
-// CONFIG FOR SENDING EMAIL
-const mailConfig = {
-  host: "smtp.mailgun.org",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.MAILGUN_USER,
-    pass: process.env.MAILGUN_PASSWORD,
-  },
-};
-
-// CREATE TRANSPORTER
-const transporter = nodemailer.createTransport(mailConfig);
-
-// VERIFY IF TRANSPORTER WORKS FINE
-transporter.verify((error, success) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Ready to send emails");
-  }
-});
-
 exports.handler = async function (event, context, callback) {
   try {
+    // CONFIG FOR SENDING EMAIL
+    const mailConfig = {
+      host: "smtp.mailgun.org",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.MAILGUN_USER,
+        pass: process.env.MAILGUN_PASSWORD,
+      },
+    };
+
+    // CREATE TRANSPORTER
+    const transporter = nodemailer.createTransport(mailConfig);
+
+    // VERIFY IF TRANSPORTER WORKS FINE
+    transporter.verify((error, success) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Ready to send emails");
+      }
+    });
+
     const messageData = JSON.parse(event.body);
 
     console.log(event);
