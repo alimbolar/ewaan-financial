@@ -40,6 +40,7 @@ exports.handler = function (event, context, callback) {
       to: recipient,
       subject: subject,
       text: message,
+      html: "<div>Hello World</>",
       //     html: `<div>You have a new message from ${name}</div>
       // <ul><li>Name : ${name}</li>
       // <li>Email : ${email}</li>
