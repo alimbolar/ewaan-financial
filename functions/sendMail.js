@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-exports.handler = async function (event, context, callback) {
+exports.handler = function (event, context, callback) {
   try {
     // CONFIG FOR SENDING EMAIL
     const mailConfig = {
@@ -40,16 +40,16 @@ exports.handler = async function (event, context, callback) {
       to: recipient,
       subject: subject,
       text: message,
-      html: `<div>You have a new message from ${name}</div> 
-  <ul><li>Name : ${name}</li>
-  <li>Email : ${email}</li>
-  <li>Mobile : ${mobile}</li>
-  <li>Message : ${message}</li>
-  </ul>
-  <br/>
-  <br/>
-  <p><em>Message received from ${country}:${ip}</em></p>
-  `,
+      //     html: `<div>You have a new message from ${name}</div>
+      // <ul><li>Name : ${name}</li>
+      // <li>Email : ${email}</li>
+      // <li>Mobile : ${mobile}</li>
+      // <li>Message : ${message}</li>
+      // </ul>
+      // <br/>
+      // <br/>
+      // <p><em>Message received from ${country}:${ip}</em></p>
+      // `,
     };
 
     transporter.sendMail(mailOptions, (error, success) => {
