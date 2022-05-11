@@ -1,21 +1,20 @@
 const nodemailer = require("nodemailer");
+// CONFIG FOR SENDING EMAIL
+const mailConfig = {
+  host: "smtp.mailgun.org",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.MAILGUN_USER,
+    pass: process.env.MAILGUN_PASSWORD,
+  },
+};
+
+// CREATE TRANSPORTER
+const transporter = nodemailer.createTransport(mailConfig);
 
 exports.handler = function (event, context, callback) {
   try {
-    // CONFIG FOR SENDING EMAIL
-    const mailConfig = {
-      host: "smtp.mailgun.org",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.MAILGUN_USER,
-        pass: process.env.MAILGUN_PASSWORD,
-      },
-    };
-
-    // CREATE TRANSPORTER
-    const transporter = nodemailer.createTransport(mailConfig);
-
     // VERIFY IF TRANSPORTER WORKS FINE
     transporter.verify((error, success) => {
       if (error) {
@@ -27,25 +26,22 @@ exports.handler = function (event, context, callback) {
 
     const messageData = JSON.parse(event.body);
 
-    // console.log(event);
-    // console.log(messageData);
-
     const country = event.headers["x-country"];
     const ip = event.headers["x-forwarded-for"].split(",").pop();
 
     const { email, name, mobile, message, subject, recipient } = messageData;
 
     const htmlMessage = () => {
-      return `<div>You have a new message from ${name}</div>
-      // <ul><li>Name : ${name}</li>
-      // <li>Email : ${email}</li>
-      // <li>Mobile : ${mobile}</li>
-      // <li>Message : ${message}</li>
-      // </ul>
-      // <br/>
-      // <br/>
-      // <p><em>Message received from ${country}:${ip}</em></p>
-      // `;
+      return `<div><strong>You have a new message from your website</strong></div>
+      <ul><li><strong>Name : </strong> ${name}</li>
+      <li><strong>Email :</strong> ${email}</li>
+      <li><strong>Mobile : </strong> ${mobile}</li>
+      <li><strong>Message :</strong> ${message}</li>
+      </ul>
+      <br/>
+      <br/>
+      <p><em>Message received from ${country}:${ip}</em></p>
+      `;
     };
     const mailOptions = {
       from: email,
@@ -65,7 +61,7 @@ exports.handler = function (event, context, callback) {
           statusCode: 200,
           body: JSON.stringify({
             status: "success",
-            data: "Thank you for your message. \r\n We will get back to you soon.",
+            data: "Thank you for your message. \r\n \r\n We will get back to you soon.",
           }),
         });
       }
@@ -76,7 +72,7 @@ exports.handler = function (event, context, callback) {
       statusCode: 200,
       body: JSON.stringify({
         status: "fail",
-        data: `Sorry. The message could not be sent due to this error : ${error.message}. \r\n  Please try again later. Or contact us on +91-9920019569`,
+        data: `Sorry. The message could not be sent due to this error : ${error.message}. \r\n  \r\n Please try again later. Or contact us on +91-9920019569`,
       }),
     });
   }
