@@ -23,6 +23,7 @@ let slideWidth = slides[currSlide].clientWidth;
 const interval = 2000;
 let slideId;
 
+console.log(slider);
 console.log(slides[currSlide]);
 console.log("slideWidth", slideWidth);
 
@@ -38,6 +39,8 @@ slidesContainer.append(firstSlide);
 // Set initial position to 1 as currSlide is on index 1
 slidesContainer.style.transform = `translatex(${-slideWidth * currSlide}px)`;
 
+const getSlides = () => slidesContainer.querySelectorAll(".slide");
+
 const moveToNext = () => {
   slides = getSlides();
   if (currSlide >= slides.length - 1) return;
@@ -47,7 +50,7 @@ const moveToNext = () => {
 };
 
 const moveToPrevious = () => {
-  // slides = getSlides();
+  slides = getSlides();
   if (currSlide <= 0) return;
   currSlide--;
   slidesContainer.style.transform = `translatex(-${slideWidth * currSlide}px)`;
@@ -79,25 +82,18 @@ slidesContainer.addEventListener("transitionend", () => {
   }
 });
 
-slidesContainer.addEventListener("mouseenter", () => {
-  // console.log("mouse enter");
-  clearInterval(slideId);
-});
+// slidesContainer.addEventListener("mouseenter", () => {
+//   console.log("mouse enter");
+//   clearInterval(slideId);
+// });
 
-slidesContainer.addEventListener("mouseleave", () => {
-  // console.log("mouse leave");
-  startSlide();
-});
-
-slidesContainer.addEventListener("mouseleave", startSlide);
+// slidesContainer.addEventListener("mouseleave", startSlide);
 
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 
 next.addEventListener("click", moveToNext);
 prev.addEventListener("click", moveToPrevious);
-
-const getSlides = () => slidesContainer.querySelectorAll(".slide");
 
 startSlide();
 
