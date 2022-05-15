@@ -9,7 +9,7 @@ module.exports = {
     filename: "main.[hash:4].js",
     path: path.resolve(__dirname, "build"),
     clean: true,
-    assetModuleFilename: "./images/[name][ext][query]",
+    assetModuleFilename: "./assets/images/[name][ext][query]",
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "./src/template.html" }),

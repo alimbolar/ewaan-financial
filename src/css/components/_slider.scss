@@ -3,9 +3,9 @@
   width: 100%;
   aspect-ratio: 3/2;
   // border: 1px solid var(--primary-color);
-  max-width: 50rem;
+  // max-width: 50rem;
 
-  overflow: hidden;
+  // overflow: hidden;
   @supports not (aspect-ratio: auto) {
     height: 300px;
     @media (min-width: 800px) {
@@ -22,11 +22,11 @@
     top: 50%;
 
     &.left {
-      left: 2rem;
+      left: 0.75rem;
       transform: translatey(-50%);
     }
     &.right {
-      right: 2rem;
+      right: 0.75rem;
       transform: translatey(-50%);
     }
 
