@@ -1,4 +1,5 @@
 import "./css/main.scss";
+import IntersectionObserverPolyfill from "intersection-observer";
 
 const menu = document.querySelector(".menu");
 const navWrapper = document.querySelector(".nav__wrapper");
@@ -22,6 +23,7 @@ let slideWidth = slides[currSlide].clientWidth;
 const interval = 2000;
 let slideId;
 
+console.log(slides[currSlide]);
 console.log("slideWidth", slideWidth);
 
 const firstSlide = slides[0].cloneNode(true);
@@ -101,32 +103,41 @@ startSlide();
 
 // ANIMATION
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      entry.target.classList.toggle("show", entry.isIntersecting);
-      if (entry.isIntersecting) observer.unobserve(entry.target);
-    });
-  },
-  {
-    threshold: 1,
-    rootMargin: "-10% 0%",
-  }
-);
+if ("IntersectionObserver" in window) {
+  console.log("yes, it exists");
+} else {
+  console.log("no, it does not exist");
+}
 
-const services = document.querySelectorAll(".service");
-const features = document.querySelectorAll(".feature");
-const benefits = document.querySelector(".benefits");
-services.forEach((service) => {
-  observer.observe(service);
-});
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("show", entry.isIntersecting);
+        if (entry.isIntersecting) observer.unobserve(entry.target);
+      });
+    },
+    {
+      root: null,
+      threshold: 0.9,
+      rootMargin: "-10% 0%",
+    }
+  );
 
-features.forEach((feature) => {
-  observer.observe(feature);
-});
+  const services = document.querySelectorAll(".service");
+  const features = document.querySelectorAll(".feature");
+  const benefits = document.querySelector(".benefits");
+  services.forEach((service) => {
+    observer.observe(service);
+  });
 
-observer.observe(benefits);
+  features.forEach((feature) => {
+    observer.observe(feature);
+  });
 
+  observer.observe(benefits);
+} else {
+}
 // SEND EMAIL
 
 const form = document.querySelector("#message");
