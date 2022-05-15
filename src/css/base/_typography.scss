@@ -14,9 +14,9 @@ h6 {
   font-weight: 300;
   max-width: 60ch;
   line-height: 1.2em;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem;
+
   text-align: center;
-  margin: auto;
 }
 
 h1 {
@@ -47,12 +47,11 @@ h6 {
 
 p,
 li {
-  font-size: calc(0.8 * var(--font-size));
+  font-size: calc(0.9 * var(--font-size));
   max-width: 60ch;
-  margin: auto;
-  padding-bottom: 0.5rem;
+
+  padding: 0 0.5rem 0.5rem 0.5rem;
   text-align: center;
-  margin: auto;
 }
 
 form {

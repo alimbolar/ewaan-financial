@@ -38,18 +38,18 @@
       </nav>
     </header>
 
-    <main>
+    <main class="main">
       <section id="hero" class="hero">
         <article>
           <figure class="hero__image">
             <picture>
               <source
                 media="(min-width: 1400px)"
-                srcset="./images/site/laptop-with-dashboard-1400.jpg"
+                srcset="./images/site/laptop-with-dashboard-800.jpg"
               />
               <source
                 media="(min-width: 1200px)"
-                srcset="./images/site/laptop-with-dashboard-1200.jpg"
+                srcset="./images/site/laptop-with-dashboard-800.jpg"
               />
               <source
                 media="(min-width: 800px)"
@@ -57,21 +57,23 @@
               />
               <source
                 media="(min-width: 600px)"
-                srcset="./images/site/laptop-with-dashboard.jpg"
+                srcset="./images/site/laptop-with-dashboard-800.jpg"
               />
-              <img src="./images/site/laptop-with-dashboard.jpg" alt="" />
+              <img src="./images/site/laptop-with-dashboard-800.jpg" alt="" />
             </picture>
           </figure>
 
           <div class="hero__content"></div>
         </article>
-
-        <h1>Accounting Solutions that Accelerate Growth</h1>
-        <p>
-          We bring end-to-end accounting solutions that keep books up-to-date
-          and compliant, enable quick decision making, seize opportunities and
-          fasten growth.
-        </p>
+        <article>
+          <h1>Accounting Solutions That Accelerate Growth</h1>
+          <p>
+            We bring end-to-end accounting solutions that keep books up-to-date
+            and compliant, enable quick decision making, seize opportunities and
+            fasten growth.
+          </p>
+          <a href="#services"><button>Our Services</button></a>
+        </article>
       </section>
       <hr id="about-us" />
 
@@ -303,24 +305,25 @@
 
       <hr id="contact-us" />
 
-      <section class="contact-us"></section>
-      <h2>Contact Us</h2>
-      <article class="contact-us__content">
-        <p>We Support Multiple Accounting Software</p>
-        <p>
-          With expertise in multiple accounting software and platform, our team
-          of highly skilled professionals offer fast learning curves and swift
-          implementation of solutions.
-        </p>
-      </article>
-      <h6 class="messageHeadline">Send us a message</h6>
-      <form id="message" enctype="multipart/form-data" method="POST">
-        <input type="text" placeholder="Your Name" name="name" />
-        <input type="email" placeholder="Your Email" name="email" />
-        <input type="tel" placeholder="Your Whatsapp Number" name="mobile" />
-        <textarea name="message" id="" cols="30" rows="10"></textarea>
-        <button type="submit">Submit</button>
-      </form>
+      <section class="contact-us">
+        <h2>Contact Us</h2>
+        <article class="contact-us__content">
+          <p>We Support Multiple Accounting Software</p>
+          <p>
+            With expertise in multiple accounting software and platform, our
+            team of highly skilled professionals offer fast learning curves and
+            swift implementation of solutions.
+          </p>
+        </article>
+        <h6 class="messageHeadline">Send us a message</h6>
+        <form id="message" enctype="multipart/form-data" method="POST">
+          <input type="text" placeholder="Your Name" name="name" />
+          <input type="email" placeholder="Your Email" name="email" />
+          <input type="tel" placeholder="Your Whatsapp Number" name="mobile" />
+          <textarea name="message" id="" cols="30" rows="10"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
 
       <footer></footer>
     </main>

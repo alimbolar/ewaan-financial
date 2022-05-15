@@ -3,7 +3,8 @@
   width: 100%;
   aspect-ratio: 3/2;
   // border: 1px solid var(--primary-color);
-  margin: auto;
+  max-width: 50rem;
+
   overflow: hidden;
   @supports not (aspect-ratio: auto) {
     height: 300px;
@@ -11,12 +12,6 @@
       height: 500px;
     }
   }
-
-  // figure {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  // }
 
   .arrow {
     position: absolute;

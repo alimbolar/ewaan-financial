@@ -36,9 +36,8 @@ hr {
 
 .service,
 .benefit,
-.highlight,
 .feature {
-  margin-block: 3rem;
+  margin-block: 2rem;
 }
 
 .service {
@@ -71,5 +70,48 @@ hr {
       filter: invert(6%) sepia(96%) saturate(6127%) hue-rotate(359deg)
         brightness(121%) contrast(99%);
     }
+  }
+}
+
+// ALL MAIN SECTION
+
+main section {
+  // border: 1px solid red;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 75rem;
+  > * {
+    // width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.main .hero,
+.main .about-us {
+  @media (min-width: 50rem) {
+    > * {
+      width: 50%;
+      //   display: flex;
+      //   flex-direction: column;
+      //   justify-content: center;
+      //   align-items: center;
+    }
+  }
+}
+
+.main .hero {
+  @media (min-width: 50rem) {
+    flex-direction: row;
+  }
+}
+
+.main .about-us {
+  @media (min-width: 50rem) {
+    flex-direction: row-reverse;
   }
 }

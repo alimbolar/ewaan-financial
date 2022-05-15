@@ -1,0 +1,10 @@
+button {
+  width: max-content;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  margin: 1rem auto;
+  background-color: var(--primary-color);
+  text-transform: uppercase;
+  color: white;
+  font-size: calc(0.9 * var(--font-size));
+}
