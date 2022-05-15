@@ -3,13 +3,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "development",
   entry: "./src/index",
   output: {
     filename: "main.[hash:4].js",
     path: path.resolve(__dirname, "build"),
     clean: true,
     assetModuleFilename: "./images/[name][ext][query]",
+  },
+  devServer: {
+    static: "./public",
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "./src/template.html" }),

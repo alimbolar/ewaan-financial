@@ -31,13 +31,15 @@ main {
 hr {
   border: 1px dotted var(--primary-color);
   width: 20rem;
-  margin-block: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .service,
 .benefit,
 .feature {
-  margin-block: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .service {

@@ -1,4 +1,4 @@
-import "./css/main.scss";
+import "./../public/css/main.scss";
 import IntersectionObserverPolyfill from "intersection-observer";
 
 const menu = document.querySelector(".menu");
@@ -12,90 +12,90 @@ const toggleNav = function () {
 navWrapper.addEventListener("click", toggleNav);
 menu.addEventListener("click", toggleNav);
 
-// SLIDER
+// // SLIDER
 
-const slider = document.querySelector(".slider");
-const slidesContainer = document.querySelector(".slides");
+// const slider = document.querySelector(".slider");
+// const slidesContainer = document.querySelector(".slides");
 
-let slides = slidesContainer.querySelectorAll(".slide");
-let currSlide = 1;
-let slideWidth = slides[currSlide].clientWidth;
-const interval = 2000;
-let slideId;
+// let slides = slidesContainer.querySelectorAll(".slide");
+// let currSlide = 1;
+// let slideWidth = slides[currSlide].clientWidth;
+// const interval = 2000;
+// let slideId;
 
-console.log(slider);
-console.log(slides[currSlide]);
-console.log("slideWidth", slideWidth);
+// console.log(slider);
+// console.log(slides[currSlide]);
+// console.log("slideWidth", slideWidth);
 
-const firstSlide = slides[0].cloneNode(true);
-const lastSlide = slides[slides.length - 1].cloneNode(true);
+// const firstSlide = slides[0].cloneNode(true);
+// const lastSlide = slides[slides.length - 1].cloneNode(true);
 
-firstSlide.id = "first-slide";
-lastSlide.id = "last-slide";
+// firstSlide.id = "first-slide";
+// lastSlide.id = "last-slide";
 
-slidesContainer.prepend(lastSlide);
-slidesContainer.append(firstSlide);
+// slidesContainer.prepend(lastSlide);
+// slidesContainer.append(firstSlide);
 
-// Set initial position to 1 as currSlide is on index 1
-slidesContainer.style.transform = `translatex(${-slideWidth * currSlide}px)`;
+// // Set initial position to 1 as currSlide is on index 1
+// slidesContainer.style.transform = `translatex(${-slideWidth * currSlide}px)`;
 
-const getSlides = () => slidesContainer.querySelectorAll(".slide");
+// const getSlides = () => slidesContainer.querySelectorAll(".slide");
 
-const moveToNext = () => {
-  slides = getSlides();
-  if (currSlide >= slides.length - 1) return;
-  currSlide++;
-  slidesContainer.style.transform = `translatex(-${slideWidth * currSlide}px)`;
-  slidesContainer.style.transition = `0.7s`;
-};
+// const moveToNext = () => {
+//   slides = getSlides();
+//   if (currSlide >= slides.length - 1) return;
+//   currSlide++;
+//   slidesContainer.style.transform = `translatex(-${slideWidth * currSlide}px)`;
+//   slidesContainer.style.transition = `0.7s`;
+// };
 
-const moveToPrevious = () => {
-  slides = getSlides();
-  if (currSlide <= 0) return;
-  currSlide--;
-  slidesContainer.style.transform = `translatex(-${slideWidth * currSlide}px)`;
-  slidesContainer.style.transition = `0.7s`;
-};
-const startSlide = () => {
-  console.log("starting slide");
-  slideId = setInterval(() => {
-    moveToNext();
-  }, interval);
-};
+// const moveToPrevious = () => {
+//   slides = getSlides();
+//   if (currSlide <= 0) return;
+//   currSlide--;
+//   slidesContainer.style.transform = `translatex(-${slideWidth * currSlide}px)`;
+//   slidesContainer.style.transition = `0.7s`;
+// };
+// const startSlide = () => {
+//   console.log("starting slide");
+//   slideId = setInterval(() => {
+//     moveToNext();
+//   }, interval);
+// };
 
-slidesContainer.addEventListener("transitionend", () => {
-  slides = getSlides();
+// slidesContainer.addEventListener("transitionend", () => {
+//   slides = getSlides();
 
-  if (slides[currSlide].id === firstSlide.id) {
-    slidesContainer.style.transition = "none";
-    currSlide = 1;
-    slidesContainer.style.transform = `translatex(-${
-      slideWidth * currSlide
-    }px)`;
-  }
-  if (slides[currSlide].id === lastSlide.id) {
-    slidesContainer.style.transition = "none";
-    currSlide = slides.length - 2;
-    slidesContainer.style.transform = `translatex(-${
-      slideWidth * currSlide
-    }px)`;
-  }
-});
-
-// slidesContainer.addEventListener("mouseenter", () => {
-//   console.log("mouse enter");
-//   clearInterval(slideId);
+//   if (slides[currSlide].id === firstSlide.id) {
+//     slidesContainer.style.transition = "none";
+//     currSlide = 1;
+//     slidesContainer.style.transform = `translatex(-${
+//       slideWidth * currSlide
+//     }px)`;
+//   }
+//   if (slides[currSlide].id === lastSlide.id) {
+//     slidesContainer.style.transition = "none";
+//     currSlide = slides.length - 2;
+//     slidesContainer.style.transform = `translatex(-${
+//       slideWidth * currSlide
+//     }px)`;
+//   }
 // });
 
-// slidesContainer.addEventListener("mouseleave", startSlide);
+// // slidesContainer.addEventListener("mouseenter", () => {
+// //   console.log("mouse enter");
+// //   clearInterval(slideId);
+// // });
 
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+// // slidesContainer.addEventListener("mouseleave", startSlide);
 
-next.addEventListener("click", moveToNext);
-prev.addEventListener("click", moveToPrevious);
+// const prev = document.querySelector(".prev");
+// const next = document.querySelector(".next");
 
-startSlide();
+// next.addEventListener("click", moveToNext);
+// prev.addEventListener("click", moveToPrevious);
+
+// startSlide();
 
 // ANIMATION
 
@@ -174,3 +174,91 @@ const submitMessage = (event) => {
 };
 
 form.addEventListener("submit", submitMessage);
+
+// SLIDER
+
+const slider = document.querySelector(".slider");
+const sliderContainer = document.querySelector(".slides");
+let slides = document.querySelectorAll(".slide");
+const slideWidth = slider.clientWidth;
+let slideId;
+
+const firstSlide = slides[0].cloneNode(true);
+const lastSlide = slides[slides.length - 1].cloneNode(true);
+
+console.log(firstSlide);
+console.log(lastSlide);
+
+sliderContainer.append(firstSlide);
+sliderContainer.prepend(lastSlide);
+
+let currSlide = 1;
+console.log(currSlide);
+console.log(slider.clientWidth);
+
+sliderContainer.style.transform = `translatex(${-slideWidth * currSlide}px)`;
+firstSlide.id = "first-slide";
+lastSlide.id = "last-slide";
+
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+const getSlides = () => {
+  return sliderContainer.querySelectorAll(".slide");
+};
+
+const moveToPreviousSlide = (event) => {
+  if (currSlide <= 0) return;
+  currSlide--;
+  sliderContainer.style.transform = `translatex(${-slideWidth * currSlide}px)`;
+  sliderContainer.style.transition = `transform 0.7s`;
+};
+
+const moveToNextSlide = (event) => {
+  console.log("slideId", slideId);
+  slides = getSlides();
+  if (currSlide >= slides.length - 1) return;
+  currSlide++;
+  sliderContainer.style.transition = `transform 0.7s`;
+  sliderContainer.style.transform = `translatex(${-slideWidth * currSlide}px)`;
+};
+
+sliderContainer.addEventListener("transitionend", (event) => {
+  slides = getSlides();
+  if (slides[currSlide].id == firstSlide.id) {
+    sliderContainer.style.transition = "none";
+    currSlide = 1;
+    sliderContainer.style.transform = `translatex(${
+      -slideWidth * currSlide
+    }px)`;
+  }
+  if (slides[currSlide].id == lastSlide.id) {
+    sliderContainer.style.transition = "none";
+    currSlide = slides.length - 2;
+    sliderContainer.style.transform = `translatex(${
+      -slideWidth * currSlide
+    }px)`;
+  }
+});
+
+const startSlide = () => {
+  slideId = setInterval(moveToNextSlide, 2000);
+};
+
+startSlide();
+prevBtn.addEventListener("click", moveToPreviousSlide);
+nextBtn.addEventListener("click", moveToNextSlide);
+
+[prevBtn, nextBtn, sliderContainer].forEach((element) => {
+  element.addEventListener("mouseenter", () => {
+    console.log("mouseenter");
+    clearInterval(slideId);
+  });
+});
+
+[prevBtn, nextBtn, sliderContainer].forEach((element) => {
+  element.addEventListener("mouseleave", () => {
+    console.log("mouseleave");
+    startSlide();
+  });
+});
