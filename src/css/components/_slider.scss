@@ -2,10 +2,10 @@
   position: relative;
   width: 100%;
   aspect-ratio: 3/2;
-  // border: 1px solid var(--primary-color);
-  // max-width: 50rem;
 
-  // overflow: hidden;
+  max-width: 50rem;
+
+  overflow: hidden;
   @supports not (aspect-ratio: auto) {
     height: 300px;
     @media (min-width: 800px) {

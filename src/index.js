@@ -52,12 +52,11 @@ const moveToPrevious = () => {
   slidesContainer.style.transition = `0.7s`;
 };
 const startSlide = () => {
+  console.log("starting slide");
   slideId = setInterval(() => {
     moveToNext();
   }, interval);
 };
-
-startSlide();
 
 slidesContainer.addEventListener("transitionend", () => {
   slides = getSlides();
@@ -79,14 +78,16 @@ slidesContainer.addEventListener("transitionend", () => {
 });
 
 slidesContainer.addEventListener("mouseenter", () => {
-  console.log("mouse enter");
+  // console.log("mouse enter");
   clearInterval(slideId);
 });
 
 slidesContainer.addEventListener("mouseleave", () => {
-  console.log("mouse leave");
+  // console.log("mouse leave");
   startSlide();
 });
+
+slidesContainer.addEventListener("mouseleave", startSlide);
 
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
@@ -95,6 +96,8 @@ next.addEventListener("click", moveToNext);
 prev.addEventListener("click", moveToPrevious);
 
 const getSlides = () => slidesContainer.querySelectorAll(".slide");
+
+startSlide();
 
 // ANIMATION
 
