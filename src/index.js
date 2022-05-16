@@ -143,6 +143,51 @@ const contactUsContent = document.querySelector(".contact-us__content");
 const submitMessage = (event) => {
   event.preventDefault();
 
+  // SELECTING VALUE FROM INPUT ELEMENTS
+  const name = form.querySelector('input[name="name"]').value;
+  const email = form.querySelector('input[name="email"]').value;
+  const mobile = form.querySelector('input[name="mobile"]').value;
+  const message = form.querySelector('textarea[name="message"]').value;
+
+  // VALIDATION
+  const nameIsValid = /[a-zA-Z]+/g.test(name);
+  const messageIsValid = /[a-zA-Z]+/g.test(message);
+  const emailIsValid =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+    );
+  const mobileIsValid = /\d{10}/.test(mobile);
+
+  // CREATE MESSAGE STATUS OBJECT
+  const messageStatus = {
+    name: nameIsValid,
+    email: emailIsValid,
+    mobile: mobileIsValid,
+    message: messageIsValid,
+  };
+
+  // CREATE ARRAY TO FILTER OUT KEY NAMES
+  const errors = Object.entries(messageStatus)
+    .map(([key, value]) => {
+      if (!value) {
+        return key;
+      }
+    })
+    .filter((x) => x != undefined);
+
+  // IF ARRAY IS POPULATED WITH ERRORS
+  if (errors.length) {
+    let errorString = "";
+    errors.forEach((error, index) => {
+      index !== errors.length - 1
+        ? (errorString += error + ", ")
+        : (errorString += error);
+    });
+    const alertMessage = `Form Inputs are not valid : ${errorString}`;
+    alert(alertMessage);
+    return;
+  }
+
   const formData = new FormData(form);
 
   formData.append("recipient", "shahebazvora@gmail.com");
@@ -171,6 +216,7 @@ const submitMessage = (event) => {
       // if (data.status === "success") {
       // }
     });
+  form.reset();
 };
 
 form.addEventListener("submit", submitMessage);
