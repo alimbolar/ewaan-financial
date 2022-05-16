@@ -139,8 +139,20 @@ if ("IntersectionObserver" in window) {
 const form = document.querySelector("#message");
 const messageHeadline = document.querySelector(".messageHeadline");
 const contactUsContent = document.querySelector(".contact-us__content");
+const formButton = form.querySelector("button");
+
+formButton.addEventListener("transitionend", () => {
+  // formButton.style.transition = "none";
+  formButton.classList.remove("clicked");
+});
 
 const submitMessage = (event) => {
+  formButton.classList.add("clicked");
+
+  // setTimeout(() => {
+  //   formButton.classList.remove("clicked");
+  // }, 4000);
+
   event.preventDefault();
 
   // SELECTING VALUE FROM INPUT ELEMENTS
@@ -309,7 +321,7 @@ nextBtn.addEventListener("click", moveToNextSlide);
   });
 });
 
-// FORM VALIDATION
+// FORM VALIDATION ON BLUR
 
 const mobileInput = document.querySelector('input[type="tel"]');
 const emailInput = document.querySelector('input[type="email"]');
