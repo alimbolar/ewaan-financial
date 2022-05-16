@@ -183,7 +183,7 @@
           <div class="service">
             <h5>GST</h5>
             <span class="icon">
-              <img src="./../public/images/accounting.png" alt="" />
+              <img src="./../public/images/gst.png" alt="" />
             </span>
             <p>
               Our customized accounts receivable services can help boost your
@@ -326,10 +326,22 @@
         </article>
         <h6 class="messageHeadline">Send us a message</h6>
         <form id="message" enctype="multipart/form-data" method="POST">
-          <input type="text" placeholder="Your Name" name="name" />
-          <input type="email" placeholder="Your Email" name="email" />
-          <input type="tel" placeholder="Your Whatsapp Number" name="mobile" />
-          <textarea name="message" id="" cols="30" rows="10"></textarea>
+          <input type="text" placeholder="Your Name" name="name" required />
+          <input type="email" placeholder="Your Email" name="email" required />
+          <input
+            type="tel"
+            placeholder="Your Whatsapp Number"
+            name="mobile"
+            required
+          />
+          <textarea
+            name="message"
+            id=""
+            placeholder="Your Comments"
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
           <button type="submit">Submit</button>
         </form>
       </section>
