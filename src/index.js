@@ -262,3 +262,39 @@ nextBtn.addEventListener("click", moveToNextSlide);
     startSlide();
   });
 });
+
+// FORM VALIDATION
+
+const mobileInput = document.querySelector('input[type="tel"]');
+const emailInput = document.querySelector('input[type="email"]');
+
+console.log(mobileInput);
+
+const validateMobile = (event) => {
+  event.preventDefault();
+  const input = event.target.value;
+  const isValid = /\d{10}/.test(input);
+  if (isValid) {
+    event.target.classList.remove("error");
+  } else {
+    event.target.classList.add("error");
+  }
+};
+
+const validateEmail = (event) => {
+  event.preventDefault();
+
+  const input = event.target.value;
+
+  const isValid =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      input
+    );
+
+  isValid
+    ? event.target.classList.remove("error")
+    : event.target.classList.add("error");
+};
+
+mobileInput.addEventListener("blur", validateMobile);
+emailInput.addEventListener("blur", validateEmail);

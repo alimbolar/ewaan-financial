@@ -18,6 +18,7 @@ form {
     transition: transform 0.7s;
     resize: none;
     font-family: var(--font-family);
+    box-shadow: none;
 
     &::placeholder {
       color: gray;
@@ -33,6 +34,10 @@ form {
       outline: none;
       border-bottom: 1px solid var(--primary-color);
       transform: scale(1.2);
+    }
+
+    &.error {
+      border: 1px solid var(--primary-color);
     }
   }
 }
