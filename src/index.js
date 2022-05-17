@@ -1,5 +1,8 @@
 import "./../public/css/main.scss";
 import IntersectionObserverPolyfill from "intersection-observer";
+import LogRocket from "logrocket";
+
+LogRocket.init("alim-bolar/ewaan-financial");
 
 const menu = document.querySelector(".menu");
 const navWrapper = document.querySelector(".nav__wrapper");
