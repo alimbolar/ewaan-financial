@@ -9,6 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
+  position: relative;
 
   span {
     width: 66%;
@@ -41,10 +43,12 @@
       background: transparent;
 
       &::before {
-        transform: rotate(45deg) translate(-0.5em, -0.5em);
+        top: 0;
+        transform: rotate(45deg);
       }
       &::after {
-        transform: rotate(-45deg) translate(-0.5em, 0.5em);
+        top: 0;
+        transform: rotate(-45deg);
 
         // background-color: black;
       }

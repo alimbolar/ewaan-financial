@@ -16,5 +16,7 @@ header {
   .logo {
     width: 10rem;
     aspect-ratio: 300/96;
+    position: relative;
+    z-index: 10;
   }
 }

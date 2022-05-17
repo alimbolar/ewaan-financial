@@ -7,10 +7,12 @@ nav {
     right: 0;
     bottom: 0;
     background-color: white;
-    z-index: 10;
+    z-index: 1;
+    transition: 0.7s;
 
     &.hidden {
-      display: none;
+      top: -100%;
+      bottom: 100%;
     }
   }
   ul {
